@@ -4,7 +4,7 @@
 
 const CONFIG = {
   // URL основного веб-сайта (для входа через браузер и кнопки "Скачать для ПК")
-  webAppUrl: "https://web.vornm.app",
+  webAppUrl: "https://handsomely-shapely-dotterel.cloudpub.ru:443",
 
   // URL для скачивания Android приложения
   androidDownloadUrl: "https://download.vornm.app/android/vornm-latest.apk",
@@ -15,9 +15,9 @@ const CONFIG = {
 
   // Альтернативный вариант: можно указать разные URL для разных платформ
   pcUrls: {
-    windows: "https://download.vornm.app/windows/vornm-setup.exe",
-    mac: "https://download.vornm.app/mac/vornm-latest.dmg",
-    linux: "https://download.vornm.app/linux/vornm-latest.AppImage",
+    windows: "",
+    mac: "",
+    linux: "",
   },
 }
 
@@ -128,3 +128,4 @@ async function checkForUpdates() {
   // Здесь можно добавить логику проверки обновлений через API
   console.log("Checking for updates...")
 }
+
