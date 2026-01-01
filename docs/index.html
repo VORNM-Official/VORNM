@@ -160,6 +160,67 @@
         </div>
     </footer>
 
+    <script>
+        // Конфигурация - здесь вы можете менять ссылки
+        const config = {
+            // Ссылка на веб-версию мессенджера (измените на вашу)
+            webAppUrl: "https://handsomely-shapely-dotterel.cloudpub.ru:443",
+            // Ссылка для загрузки Android приложения (опционально)
+            androidAppUrl: "#"
+        };
+
+        // Функция для открытия веб-версии
+        function openWebApp() {
+            window.open(config.webAppUrl, '_blank');
+        }
+
+        // Функция для скачивания Android приложения
+        function downloadAndroidApp() {
+            if (config.androidAppUrl !== "#") {
+                window.location.href = config.androidAppUrl;
+            } else {
+                alert("Ссылка для скачивания Android приложения пока не настроена");
+            }
+        }
+
+        // Добавление обработчиков событий после загрузки DOM
+        document.addEventListener('DOMContentLoaded', function() {
+            // Веб-версия в главном разделе
+            const webLoginBtn = document.getElementById('webLoginBtn');
+            if (webLoginBtn) {
+                webLoginBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openWebApp();
+                });
+            }
+
+            // Веб-версия в разделе загрузки
+            const pcDownloadBtn = document.getElementById('pcDownloadBtn');
+            if (pcDownloadBtn) {
+                pcDownloadBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openWebApp();
+                });
+            }
+
+            // Android загрузка
+            const androidDownloadBtn = document.getElementById('androidDownloadBtn');
+            if (androidDownloadBtn) {
+                androidDownloadBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    downloadAndroidApp();
+                });
+            }
+
+            // Также делаем ссылки активными через href для удобства
+            if (webLoginBtn) webLoginBtn.href = config.webAppUrl;
+            if (pcDownloadBtn) pcDownloadBtn.href = config.webAppUrl;
+            if (androidDownloadBtn && config.androidAppUrl !== "#") {
+                androidDownloadBtn.href = config.androidAppUrl;
+            }
+        });
+    </script>
+    
     <script src="js/script.js"></script>
 </body>
 </html>
